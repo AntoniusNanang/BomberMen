@@ -199,6 +199,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 3
+  boom: {fileID: 4344013239714204632, guid: 2c24680a98c91ea44a50019124bcd349, type: 3}
 --- !u!54 &1978982734364568149
 Rigidbody:
   m_ObjectHideFlags: 0

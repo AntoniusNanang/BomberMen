@@ -19,6 +19,8 @@ public class Player : MonoBehaviour
     [Header("移動側道")]
     public float moveSpeed = 3.0f;
 
+   public GameObject boom;
+
     enum MoveDirection
     {
         None = -1,
@@ -46,6 +48,7 @@ public class Player : MonoBehaviour
         StartMove();
         //IsDirWall();
         if (IsTurn()) Turn();
+        Boom();
     }
 
     void stopMove()
@@ -99,6 +102,11 @@ public class Player : MonoBehaviour
         return Target[count - 1];
     }
 
+    Vector3 GetPlayerPos()
+    {
+
+    }
+
     //void IsDirWall()
     //{
     //    for (int i = 0; i < Target.Length; i++)
@@ -139,6 +147,14 @@ public class Player : MonoBehaviour
                 return Vector3.forward;
             default:
                 return Vector3.zero;
+        }
+    }
+
+    void Boom()
+    {
+        if (Input.GetKey(KeyCode.B))
+        {
+            Instantiate(boom, transform.position, Quaternion.identity);
         }
     }
 }
