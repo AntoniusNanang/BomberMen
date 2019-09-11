@@ -48,7 +48,11 @@ public class Player : MonoBehaviour
         StartMove();
         //IsDirWall();
         if (IsTurn()) Turn();
+        UpdateMapPos();
         Boom();
+        Debug.Log("mapPos = " + mapPos);
+        Debug.Log("boom = " + boom.transform.position);
+
     }
 
     void stopMove()
@@ -102,9 +106,34 @@ public class Player : MonoBehaviour
         return Target[count - 1];
     }
 
+    void UpdateMapPos()
+    {
+        beforPos = mapPos;
+        mapPos = GetPlayerPos();
+    }
     Vector3 GetPlayerPos()
     {
-
+        if(moveDir == MoveDirection.Right || moveDir == MoveDirection.Foward)
+        {
+            return new Vector3 (
+               Mathf.Ceil( transform.position.x),
+               Mathf.Ceil( transform.position.y),
+               Mathf.Ceil( transform.position.z));
+        }
+        else if(moveDir == MoveDirection.Left)
+        {
+            return new Vector3(
+              Mathf.Floor(transform.position.x),
+              Mathf.Floor(transform.position.y),
+              Mathf.Floor(transform.position.z));
+        }
+        else
+        {
+            return new Vector3(
+               Mathf.Floor(transform.position.x),
+               Mathf.Floor(transform.position.y),
+               Mathf.Floor(transform.position.z));
+        }
     }
 
     //void IsDirWall()
@@ -154,7 +183,7 @@ public class Player : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.B))
         {
-            Instantiate(boom, transform.position, Quaternion.identity);
+            Instantiate(boom, mapPos, Quaternion.identity);
         }
     }
 }
