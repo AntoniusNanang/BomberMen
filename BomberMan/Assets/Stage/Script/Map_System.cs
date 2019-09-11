@@ -66,7 +66,7 @@ public class Map_System : MonoBehaviour
 
     bool RandomBox()
     {
-        return Random.Range(0, 2) == 0;
+        return Random.Range(0, 2) == 0 || Random.Range(0,2) == 1 ;
     }
 
 }
