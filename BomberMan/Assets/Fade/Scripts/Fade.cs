@@ -37,7 +37,7 @@ public class Fade : MonoBehaviour
             cutoutRange = 1;
         }
         fade.Range = cutoutRange;
-
+        FadeOut(1.5f);
 
     }
     
