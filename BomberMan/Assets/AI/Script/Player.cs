@@ -157,7 +157,7 @@ public class Player : MonoBehaviour
     }
     void Boom()
     {
-        if (Input.GetKey(KeyCode.B))
+        if (Input.GetKeyDown(KeyCode.B))
         {
             Instantiate(boom, ceil(), Quaternion.identity);
         }

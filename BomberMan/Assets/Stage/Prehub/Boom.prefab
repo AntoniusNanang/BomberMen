@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4344013239714204628}
   - component: {fileID: 4344013239714204629}
   - component: {fileID: 4344013239714204634}
+  - component: {fileID: 147196564310755627}
   - component: {fileID: 4344013239714204635}
   m_Layer: 0
   m_Name: Boom
@@ -78,6 +79,21 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &147196564310755627
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4344013239714204632}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a8d440472f3b594593a1bd30c819414, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Blast: {fileID: 2405285152813422219, guid: 98cdb20634707824eb47f5285754ff16, type: 3}
+  B_R: 2
+  timer: 2
 --- !u!135 &4344013239714204635
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -86,7 +102,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4344013239714204632}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
