@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 491856146526482539}
   - component: {fileID: 420838223462269789}
   - component: {fileID: 7839270422230566384}
+  - component: {fileID: 1805418582621285755}
   - component: {fileID: 1323117333498510281}
   m_Layer: 0
   m_Name: Blast
@@ -78,6 +79,18 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &1805418582621285755
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2405285152813422219}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b468c1cf480fca648b1d5c97c3e568e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!65 &1323117333498510281
 BoxCollider:
   m_ObjectHideFlags: 0

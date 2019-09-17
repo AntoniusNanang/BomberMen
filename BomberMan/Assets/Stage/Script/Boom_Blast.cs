@@ -48,26 +48,38 @@ public class Boom_Blast : MonoBehaviour
                 {
                     Blast_P = Instantiate(Blast, gameObject.transform.position - (new Vector3(0, 0, i + 1)), Quaternion.identity);
                     Blast_P.transform.parent = gameObject.transform;
-                    Blast_P.tag = "Blast_z";
+                    Blast_P.tag = "Blast_-z";
                     Destroy(Blast_P, 0.5f);
                 }
                 if (x)
                 {
                     Blast_P = Instantiate(Blast, gameObject.transform.position + (new Vector3(i + 1, 0, 0)), Quaternion.identity);
                     Blast_P.transform.parent = gameObject.transform;
-                    Blast_P.tag = "Blast_z";
+                    Blast_P.tag = "Blast_x";
                     Destroy(Blast_P, 0.5f);
                 }
                 if (_x)
                 {
                     Blast_P = Instantiate(Blast, gameObject.transform.position - (new Vector3(i + 1, 0, 0)), Quaternion.identity);
                     Blast_P.transform.parent = gameObject.transform;
-                    Blast_P.tag = "Blast_z";
+                    Blast_P.tag = "Blast_-x";
                     Destroy(Blast_P, 0.5f);
                 }
             }
             Destroy(gameObject, 0.5f);
             yield break;
+        }
+    }
+    public void RelayOnTriggerEnter(Collider collider, string mine)
+    {
+        
+        if (collider.gameObject.CompareTag("Box"))
+        {
+            Debug.Log(1);
+            if (mine.Equals("Blast_z"))   z = false;
+            if (mine.Equals("Blast_-z")) _z = false;
+            if (mine.Equals("Blast_x")) x = false;
+            if (mine.Equals("Blast_-x")) _x = false;
         }
     }
 }

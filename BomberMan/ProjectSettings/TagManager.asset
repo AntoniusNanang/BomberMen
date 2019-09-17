@@ -8,7 +8,6 @@ TagManager:
   - Wall
   - Balst
   - Boom
-  - Balst_x
   - Blast_-x
   - Blast_z
   - Blast_-z
@@ -19,6 +18,8 @@ TagManager:
   - Speed_Up
   - Boom_Plus
   - Boom_PowUp
+  - Blast_x
+  - Rood
   layers:
   - Default
   - TransparentFX

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4344013239714204628}
   - component: {fileID: 4344013239714204629}
   - component: {fileID: 4344013239714204634}
-  - component: {fileID: 147196564310755627}
+  - component: {fileID: 2775932400880646397}
   - component: {fileID: 4344013239714204635}
   m_Layer: 0
   m_Name: Boom
@@ -79,7 +79,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!114 &147196564310755627
+--- !u!114 &2775932400880646397
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

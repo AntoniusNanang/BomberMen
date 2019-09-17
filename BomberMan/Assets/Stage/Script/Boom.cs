@@ -4,21 +4,17 @@ using UnityEngine;
 
 public class Boom : MonoBehaviour
 {
-    public GameObject boom;
-    GameObject obj;
-
-    // Start is called before the first frame update
+    Boom_Blast ColliderTriggerParent;//親のコライダー
     void Start()
     {
-       
+        GameObject objColliderTriggerParent = gameObject.transform.parent.gameObject;
+        ColliderTriggerParent = objColliderTriggerParent.GetComponent<Boom_Blast>();
     }
 
-    // Update is called once per frame
-    void Update()
+    void OnTriggerEnter(Collider col)
     {
-        //if (Input.GetKey(KeyCode.B))
-        //{
-        //    Instantiate(boom, new Vector3(0, 10, 0), Quaternion.identity);
-        //}
+        Debug.Log(col.gameObject.tag);
+        if (col.gameObject.CompareTag("Boom")|| col.gameObject.CompareTag("Box"))
+            ColliderTriggerParent.RelayOnTriggerEnter(col, gameObject.tag);
     }
 }
