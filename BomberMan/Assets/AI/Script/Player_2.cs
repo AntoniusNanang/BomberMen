@@ -75,7 +75,7 @@ public class Player_2 : MonoBehaviour
         {
             var pos = new Vector3
                 (
-                    Mathf.RoundToInt(myTransform.position.x)-0.5f,
+                    Mathf.RoundToInt(myTransform.position.x),
                     bombPrefab.transform.position.y+1,
                     Mathf.RoundToInt(myTransform.position.z)
                 );
