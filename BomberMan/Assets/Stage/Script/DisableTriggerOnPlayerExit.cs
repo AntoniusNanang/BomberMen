@@ -8,7 +8,6 @@ public class DisableTriggerOnPlayerExit : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         { // When the player exits the trigger area
-            Debug.Log("処理");
             GetComponent<Collider>().isTrigger = false; // Disable the trigger
         }
     }
