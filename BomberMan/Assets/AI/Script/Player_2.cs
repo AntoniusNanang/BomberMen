@@ -65,7 +65,7 @@ public class Player_2 : MonoBehaviour
         }
         if (canDropBombs && Input.GetKeyDown(KeyCode.B))
         {
-
+            DropBomb();
         }
     }
 
@@ -73,7 +73,13 @@ public class Player_2 : MonoBehaviour
     {
         if (bombPrefab)
         {
-
+            var pos = new Vector3
+                (
+                    Mathf.RoundToInt(myTransform.position.x)-0.5f,
+                    bombPrefab.transform.position.y+1,
+                    Mathf.RoundToInt(myTransform.position.z)
+                );
+            Instantiate(bombPrefab, pos, bombPrefab.transform.rotation);
         }
     }
 }
