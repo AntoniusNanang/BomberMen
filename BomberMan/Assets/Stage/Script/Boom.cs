@@ -13,7 +13,7 @@ public class Boom : MonoBehaviour
 
     void OnTriggerEnter(Collider col)
     {
-        Debug.Log(col.gameObject.tag);
+        //Debug.Log(col.gameObject.tag);
         if (col.gameObject.CompareTag("Boom")|| col.gameObject.CompareTag("Box"))
             ColliderTriggerParent.RelayOnTriggerEnter(col, gameObject.tag);
     }

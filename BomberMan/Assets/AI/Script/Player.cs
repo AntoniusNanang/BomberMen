@@ -103,34 +103,7 @@ public class Player : MonoBehaviour
         return Target[count - 1];
     }
 
-   
-    
 
-    //void IsDirWall()
-    //{
-    //    for (int i = 0; i < Target.Length; i++)
-    //    {
-    //        Vector3 subAbs = transform.localPosition - Target[i].transform.localPosition;
-    //        subAbs = new Vector3(
-    //                      Mathf.Abs(subAbs.x),
-    //                      Mathf.Abs(subAbs.y),
-    //                      Mathf.Abs(subAbs.z));
-    //        Vector3 AddScale = (transform.localScale +
-    //                                Target[i].transform.localScale) / 2.0f;
-    //        if ((subAbs.x < AddScale.x) &&
-    //           (subAbs.y < AddScale.y) &&
-    //           (subAbs.z < AddScale.z))
-    //        {
-    //            Debug.Log("当たり");
-    //            stopMove();
-    //        }
-    //        else
-    //        {
-    //           //Debug.Log("はずれ");
-    //        }
-    //    }
-       
-    //}
 
     Vector3 DirectionToVector(MoveDirection dir)
     {
