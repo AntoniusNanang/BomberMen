@@ -154,8 +154,10 @@ MonoBehaviour:
   explosionPrefub: {fileID: 2405285152813422219, guid: 98cdb20634707824eb47f5285754ff16,
     type: 3}
   levelMask:
-    serializedVersion: 2
+  - serializedVersion: 2
     m_Bits: 512
+  - serializedVersion: 2
+    m_Bits: 1024
 --- !u!114 &2775932400880646397
 MonoBehaviour:
   m_ObjectHideFlags: 0

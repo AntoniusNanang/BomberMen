@@ -5,7 +5,8 @@ using UnityEngine;
 public class Bomb : MonoBehaviour
 {
     public GameObject explosionPrefub;
-    public LayerMask levelMask;
+    public LayerMask[] levelMask;
+    public int Pow = 3;
     private bool exploded = false;
     // Start is called before the first frame update
     void Start()
@@ -37,7 +38,7 @@ public class Bomb : MonoBehaviour
 
     private IEnumerator CreateExplosion(Vector3 direction)
     {
-        for (int i = 1; i < 3; i++)
+        for (int i = 1; i < Pow; i++)
         {
             RaycastHit hit;
             Physics.Raycast
@@ -46,13 +47,19 @@ public class Bomb : MonoBehaviour
                     direction,
                     out hit,
                     i,
-                    levelMask
+                    levelMask[0]
                 );
             if (!hit.collider)
             {
                 Instantiate(explosionPrefub, transform.position + (i * direction), explosionPrefub.transform.rotation);
             }
             else break;
+            //爆風を広げた先に壊れるブロックある場合
+            if (Physics.Raycast(transform.position + new Vector3(0, 0.5f, 0), direction, out hit, i, levelMask[1]))
+            {
+                Destroy(hit.collider.gameObject, 1f);
+                break;
+            }
             yield return new WaitForSeconds(0.05f);
         }
     }

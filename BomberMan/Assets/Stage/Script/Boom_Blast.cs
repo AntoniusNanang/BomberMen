@@ -7,14 +7,14 @@ public class Boom_Blast : MonoBehaviour
 
     public GameObject Blast;
     public int B_R = 2;
-    Item_Boom_PowUp BomJ;
+
     public float timer = 2.0f;
     //GameObject System;
 
     // Start is called before the first frame update
     void Start()
     {
-        BomJ = GetComponent<Item_Boom_PowUp>();
+       
         //B_R = BomJ.Passing(B_R);
         Invoke("Megumin", timer);
     }

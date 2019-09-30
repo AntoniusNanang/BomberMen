@@ -8,9 +8,12 @@ public class Player_2 : MonoBehaviour
     [Range (1,4)]
     public int PlayerNumber = 1;
     public float moveSpeed = 5.0f;
-    public bool canDropBombs = true;
+    public bool[] canDropBombs = new bool[4];
     public bool canMove = true;
 
+    public Bomb bomb;
+    public int[] maxBomb = new int[4];
+    public int[] bombs = new int[4];
     public GameObject bombPrefab;
 
     private Rigidbody rigidBody;
@@ -19,7 +22,7 @@ public class Player_2 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        transform.localPosition += new Vector3(0, 0.5f, 0);
+        //transform.localPosition += new Vector3(0, 0.5f, 0);
         rigidBody = GetComponent<Rigidbody>();
         myTransform = transform;
     }
@@ -63,7 +66,7 @@ public class Player_2 : MonoBehaviour
             //rigidBody.velocity = new Vector3(moveSpeed, rigidBody.velocity.y, rigidBody.velocity.z);
             myTransform.rotation = Quaternion.Euler(0, 270, 0);
         }
-        if (canDropBombs && Input.GetKeyDown(KeyCode.B))
+        if (canDropBombs[0] && Input.GetKeyDown(KeyCode.B))
         {
             DropBomb();
         }
