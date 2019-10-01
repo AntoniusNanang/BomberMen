@@ -7,7 +7,7 @@ public class Item : MonoBehaviour
     public enum ItemType
     {
         Pow_UP,
-        Bomp_UP,
+        Bomb_UP,
     }
     public ItemType itemType;
     // Start is called before the first frame update

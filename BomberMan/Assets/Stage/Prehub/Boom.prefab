@@ -158,6 +158,9 @@ MonoBehaviour:
     m_Bits: 512
   - serializedVersion: 2
     m_Bits: 1024
+  Pow: 3
+  bomb: {fileID: 4021274879241860939, guid: 54936273b6cfdc34b9cec39760646ee0, type: 3}
+  bombs: 1
 --- !u!114 &2775932400880646397
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -41,7 +41,7 @@ public class Break_Block : MonoBehaviour
                 break;
             case 1:
                 obj = Instantiate(item_pre[1], gameObject.transform.position, item_pre[1].transform.rotation) as GameObject;
-                obj.GetComponent<Item>().itemType = Item.ItemType.Bomp_UP;
+                obj.GetComponent<Item>().itemType = Item.ItemType.Bomb_UP;
                 break;
             default:
                 break;

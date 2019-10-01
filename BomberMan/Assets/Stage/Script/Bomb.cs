@@ -7,7 +7,10 @@ public class Bomb : MonoBehaviour
     public GameObject explosionPrefub;
     public LayerMask[] levelMask;
     public int Pow = 3;
+    public Player_2 bomb;
+    public int bombs = 1;
     private bool exploded = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -34,6 +37,8 @@ public class Bomb : MonoBehaviour
         transform.Find("Collider").gameObject.SetActive(false);
 
         Destroy(gameObject, 0.3f);
+        bomb.BombNum(bombs);
+       
     }
 
     private IEnumerator CreateExplosion(Vector3 direction)

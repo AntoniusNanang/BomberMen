@@ -20,6 +20,8 @@ TagManager:
   - Boom_PowUp
   - Blast_x
   - Rood
+  - Item
+  - Item_Bomb
   layers:
   - Default
   - TransparentFX
