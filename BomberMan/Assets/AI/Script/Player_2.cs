@@ -14,6 +14,8 @@ public class Player_2 : MonoBehaviour
     public Bomb bomb;
     static public int[] maxBomb = new int[4];
     static public int[] bombs = new int[4];
+    public int[] PlayerBombPow = new int[4];
+    int MaxPow = 6;
     public GameObject bombPrefab;
 
     private Rigidbody rigidBody;
@@ -29,6 +31,7 @@ public class Player_2 : MonoBehaviour
         canDropBombs[0] = true; canDropBombs[1] = true; canDropBombs[2] = true; canDropBombs[3] = true;
         bombs[0] = 2; bombs[1] = 2; bombs[2] = 2; bombs[3] = 2;
         maxBomb[0] = 2; maxBomb[1] = 2; maxBomb[2] = 2; maxBomb[3] = 2;
+        PlayerBombPow[0] = 3; PlayerBombPow[1] = 3; PlayerBombPow[2] = 3; PlayerBombPow[3] = 3;
     }
 
     // Update is called once per frame
@@ -75,6 +78,7 @@ public class Player_2 : MonoBehaviour
         }
         if (canDropBombs[0] && Input.GetKeyDown(KeyCode.B))
         {
+            bomb.Pow = PlayerBombPow[0];
             DropBomb();
             bombs[0]--;
             
@@ -124,7 +128,7 @@ public class Player_2 : MonoBehaviour
     public void OnTriggerEnter(Collider other)
     {
         //アイテムに触れたとき
-        if (other.CompareTag("Item_Bomb"))
+        if (other.CompareTag("Item"))
         {
             
             switch (PlayerNumber)
@@ -135,6 +139,11 @@ public class Player_2 : MonoBehaviour
                         Destroy(other.gameObject);
                         Bomb_UP();
                         bombs[0] += 1;
+                    }
+                    if(other.GetComponent<Item>().itemType == Item.ItemType.Pow_UP)
+                    {
+                        Destroy(other.gameObject);
+                        PowUP();
                     }
                     break;
             }
@@ -161,6 +170,30 @@ public class Player_2 : MonoBehaviour
             case 4:
                 maxBomb[3] += 1;
                 if (maxBomb[3] >= 6) maxBomb[3] += 0;
+                break;
+            default:
+                break;
+        }
+    }
+    public void PowUP()
+    {
+        switch (PlayerNumber)
+        {
+            case 1:
+                PlayerBombPow[0] += 1;
+                if (PlayerBombPow[0] > MaxPow) PlayerBombPow[0] += 0;
+                break;
+            case 2:
+                PlayerBombPow[1] += 1;
+                if (PlayerBombPow[1] > MaxPow) PlayerBombPow[1] += 0;
+                break;
+            case 3:
+                PlayerBombPow[2] += 1;
+                if (PlayerBombPow[2] > MaxPow) PlayerBombPow[2] += 0;
+                break;
+            case 4:
+                PlayerBombPow[3] += 1;
+                if (PlayerBombPow[3] > MaxPow) PlayerBombPow[3] += 0;
                 break;
             default:
                 break;
