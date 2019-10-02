@@ -1345,7 +1345,7 @@ SphereCollider:
   m_GameObject: {fileID: 86412418}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
@@ -5210,7 +5210,7 @@ SphereCollider:
   m_GameObject: {fileID: 336619976}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
@@ -8149,7 +8149,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 535012722}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -7, y: 1, z: 5}
+  m_LocalPosition: {x: -7, y: 1.5, z: 5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2138224789}
@@ -8515,7 +8515,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 556515184}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3, y: 1, z: 15}
+  m_LocalPosition: {x: 3, y: 1.5, z: 15}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 86412419}
@@ -17153,7 +17153,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1261573165}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3, y: 1, z: 5}
+  m_LocalPosition: {x: 3, y: 1.5, z: 5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 336619977}
@@ -24488,7 +24488,8 @@ MonoBehaviour:
   moveSpeed: 5
   canDropBombs: 00000000
   canMove: 1
-  bomb: {fileID: 0}
+  bomb: {fileID: 2189331472804684845, guid: 2c24680a98c91ea44a50019124bcd349, type: 3}
+  PlayerBombPow: 00000000000000000000000000000000
   bombPrefab: {fileID: 4344013239714204632, guid: 2c24680a98c91ea44a50019124bcd349,
     type: 3}
 --- !u!136 &1836401533
@@ -28705,7 +28706,7 @@ SphereCollider:
   m_GameObject: {fileID: 2138224788}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
