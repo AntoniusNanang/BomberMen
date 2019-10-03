@@ -67,7 +67,7 @@ public class Player_2 : MonoBehaviour
         if (Input.GetKey(KeyCode.S))
         {
             transform.localPosition += Vector3.back * moveSpeed * Time.deltaTime;
-            rigidBody.velocity = new Vector3(rigidBody.velocity.x, rigidBody.velocity.y, -moveSpeed);
+            //rigidBody.velocity = new Vector3(rigidBody.velocity.x, rigidBody.velocity.y, -moveSpeed);
             myTransform.rotation = Quaternion.Euler(0, 0, 0);
         }
         if (Input.GetKey(KeyCode.D))
