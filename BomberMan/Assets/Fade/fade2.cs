@@ -23,7 +23,7 @@ public class fade2 : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Return))
             {
-                fade.FadeIn(time, () => SceneManager.LoadScene("ResultScene"));
+                fade.FadeIn(time, () => SceneManager.LoadScene("Game"));
             }
         }
         else if (scene_name[1] == SceneManager.GetActiveScene().name)

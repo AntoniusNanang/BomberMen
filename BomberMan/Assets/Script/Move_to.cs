@@ -3,11 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-//[DefaultExecutionOrder(-103)]
 public class Move_to : MonoBehaviour
 {
     public Transform ply;
-    public Player p;
+    public Player_2 p;
     public GameObject bombPrefab;
     private Transform myTransform;
     public int bombs = 2;
@@ -28,7 +27,7 @@ public class Move_to : MonoBehaviour
        
         a = bomb.Pow;
         myTransform = transform;
-        
+        //p = p_0.GetComponent<Player_2>();
         //animator = myTransform.Find("PlayerModel").GetComponent<Animator>();
         
     }
@@ -36,7 +35,8 @@ public class Move_to : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-       Move();
+        
+        Move();
         Ray();
         if(a < bomb.Pow)
         {
@@ -58,7 +58,7 @@ public class Move_to : MonoBehaviour
             { //Check if bomb prefab is assigned first
                 var pos = new Vector3
                     (
-                        Mathf.RoundToInt(myTransform.position.x),bombPrefab.transform.position.y,Mathf.RoundToInt(myTransform.position.z) );
+                        Mathf.RoundToInt(myTransform.position.x),bombPrefab.transform.position.y+1f,Mathf.RoundToInt(myTransform.position.z) );
                 Instantiate
                     (
                     bombPrefab,
@@ -140,46 +140,45 @@ public class Move_to : MonoBehaviour
 
         if(Physics.Raycast(ray_up,out hit, disply, lay))//プレイヤーが上にいるとき
         {
-
+            Debug.Log("上");
             if (canDropBombs)
             {
                 bom_A();
                 bombs--;
-                Debug.Log(bombs);
-                Debug.Log("上");
+                
             }
         }
         if (Physics.Raycast(ray_down, out hit, disply, lay))//プレイヤーが下にいるとき
         {
+            Debug.Log("下");
             if (canDropBombs)
             {
                 bom_A();
                 bombs--;
-                Debug.Log(bombs);
-                Debug.Log("下");
+                
 
             }
         }
         if (Physics.Raycast(ray_right, out hit, disply, lay))//プレイヤーが右にいるとき
         {
+            Debug.Log("右");
             if (canDropBombs)
             {
                 bom_A();
                 bombs--;
-                Debug.Log(bombs);
-                Debug.Log("右");
+                
 
             }
 
         }
         if (Physics.Raycast(ray_left, out hit, disply, lay))//プレイヤーが左にいるとき
         {
+            Debug.Log("左");
             if (canDropBombs)
             {
                 bom_A();
                 bombs--;
-                Debug.Log(bombs);
-                Debug.Log("左");
+                
 
             }
         }
