@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2395984584298868867}
   - component: {fileID: 2395984584298868866}
   - component: {fileID: 2395984584298868869}
+  - component: {fileID: 1929518773394555963}
   m_Layer: 0
   m_Name: BomberMen2
   m_TagString: Untagged
@@ -72,7 +73,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2395984583482205732}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 063a260443073bd499f747001e62fbc0, type: 3}
   m_Name: 
@@ -84,6 +85,39 @@ MonoBehaviour:
   bomb: {fileID: 2189331472804684845, guid: 2c24680a98c91ea44a50019124bcd349, type: 3}
   PlayerBombPow: 00000000000000000000000000000000
   bombPrefab: {fileID: 4344013239714204632, guid: 2c24680a98c91ea44a50019124bcd349,
+    type: 3}
+  dead: 0
+  DeadPlayer: {fileID: 0}
+--- !u!114 &1929518773394555963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2395984583482205732}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 056eec2f3a42bc04a8160060777714e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ply: {fileID: 3675022564474455377, guid: 385ba0ee51a658940b1045b3c5763a4c, type: 3}
+  p: {fileID: 3675022564234285008, guid: 385ba0ee51a658940b1045b3c5763a4c, type: 3}
+  bombPrefab: {fileID: 4344013239714204632, guid: 2c24680a98c91ea44a50019124bcd349,
+    type: 3}
+  bombs: 2
+  canDropBombs: 1
+  bomb: {fileID: 2189331472804684845, guid: 2c24680a98c91ea44a50019124bcd349, type: 3}
+  LayerMask:
+    serializedVersion: 2
+    m_Bits: 2048
+  lay:
+    serializedVersion: 2
+    m_Bits: 4096
+  la:
+    serializedVersion: 2
+    m_Bits: 1024
+  PlayerNumber: 2
+  DeadPlayer: {fileID: 5083321912318399513, guid: ccba06ca30fded445957c822aafed642,
     type: 3}
 --- !u!1 &2395984583482205734
 GameObject:

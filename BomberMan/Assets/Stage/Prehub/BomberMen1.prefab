@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 3675022564234285008}
   m_Layer: 0
   m_Name: BomberMen1
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -115,6 +115,8 @@ MonoBehaviour:
   PlayerBombPow: 00000000000000000000000000000000
   bombPrefab: {fileID: 4344013239714204632, guid: 2c24680a98c91ea44a50019124bcd349,
     type: 3}
+  dead: 0
+  DeadPlayer: {fileID: 0}
 --- !u!1 &3675022564474493299
 GameObject:
   m_ObjectHideFlags: 0

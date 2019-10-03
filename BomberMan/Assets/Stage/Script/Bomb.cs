@@ -8,6 +8,7 @@ public class Bomb : MonoBehaviour
     public LayerMask[] levelMask;
     public int Pow = 3;
     public Player_2 bomb;
+    public Move_to com_Bomb;
     public int bombs = 1;
     private bool exploded = false;
 
@@ -22,6 +23,7 @@ public class Bomb : MonoBehaviour
     {
         
     }
+
 
     private void Explode()
     {
@@ -38,6 +40,7 @@ public class Bomb : MonoBehaviour
 
         Destroy(gameObject, 0.3f);
         bomb.BombNum(bombs);
+        com_Bomb.BombNu(bombs);
        
     }
 

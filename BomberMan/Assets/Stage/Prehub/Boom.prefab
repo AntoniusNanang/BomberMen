@@ -58,6 +58,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e571a2e3629b44e44869b5f7e72aa5c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Pl: {fileID: 3675022564234285008, guid: 385ba0ee51a658940b1045b3c5763a4c, type: 3}
 --- !u!208 &7330526366944238773
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -86,7 +87,6 @@ GameObject:
   - component: {fileID: 4344013239714204629}
   - component: {fileID: 4344013239714204634}
   - component: {fileID: 2189331472804684845}
-  - component: {fileID: 2775932400880646397}
   - component: {fileID: 4344013239714204635}
   - component: {fileID: 3213264328255242020}
   - component: {fileID: 7051124452624102747}
@@ -171,6 +171,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosionPrefub: {fileID: 2405285152813422219, guid: 98cdb20634707824eb47f5285754ff16,
     type: 3}
+  nullPrefub: {fileID: 1384607180117938968, guid: c1433ed12f7eb81479d23357bcd451b1,
+    type: 3}
   levelMask:
   - serializedVersion: 2
     m_Bits: 512
@@ -178,22 +180,9 @@ MonoBehaviour:
     m_Bits: 1024
   Pow: 3
   bomb: {fileID: 4021274879241860939, guid: 54936273b6cfdc34b9cec39760646ee0, type: 3}
+  com_Bomb: {fileID: 1929518773394555963, guid: 3f18b27243e6a124fa6fd8cdeb23c81b,
+    type: 3}
   bombs: 1
---- !u!114 &2775932400880646397
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4344013239714204632}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a8d440472f3b594593a1bd30c819414, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Blast: {fileID: 2405285152813422219, guid: 98cdb20634707824eb47f5285754ff16, type: 3}
-  B_R: 2
-  timer: 2
 --- !u!135 &4344013239714204635
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -221,7 +210,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 1
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 116
   m_CollisionDetection: 0
 --- !u!208 &7051124452624102747
 NavMeshObstacle:
