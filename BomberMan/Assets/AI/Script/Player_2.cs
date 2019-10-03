@@ -18,6 +18,9 @@ public class Player_2 : MonoBehaviour
     int MaxPow = 6;
     public GameObject bombPrefab;
 
+    public bool dead = false;
+    public DeadPlayer DeadPlayer;
+
     private Rigidbody rigidBody;
     private Transform myTransform;
     private Animator animator;
@@ -127,6 +130,13 @@ public class Player_2 : MonoBehaviour
     //プレイヤの当たり判定の処理
     public void OnTriggerEnter(Collider other)
     {
+        //爆風にあったとき
+        if (other.CompareTag("Balst"))
+        {
+            dead = true;
+            DeadPlayer.PlayerDied(PlayerNumber);
+            Destroy(gameObject);
+        }
         //アイテムに触れたとき
         if (other.CompareTag("Item"))
         {
