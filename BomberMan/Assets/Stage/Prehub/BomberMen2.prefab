@@ -81,9 +81,10 @@ MonoBehaviour:
   moveSpeed: 5
   canDropBombs: 00000000
   canMove: 1
-  bomb: {fileID: 0}
+  bomb: {fileID: 2189331472804684845, guid: 2c24680a98c91ea44a50019124bcd349, type: 3}
   PlayerBombPow: 00000000000000000000000000000000
-  bombPrefab: {fileID: 0}
+  bombPrefab: {fileID: 4344013239714204632, guid: 2c24680a98c91ea44a50019124bcd349,
+    type: 3}
 --- !u!1 &2395984583482205734
 GameObject:
   m_ObjectHideFlags: 0
