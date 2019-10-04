@@ -24,7 +24,7 @@ public class Move_to : MonoBehaviour
 
     [Range(2, 4)]
     public int PlayerNumber;
-    bool dead = false;
+    public bool dead = false;
     public DeadPlayer DeadPlayer;
     // Start is called before the first frame updat
     void Start()
@@ -126,30 +126,27 @@ public class Move_to : MonoBehaviour
 
             if (canDropBombs[PlayerNumber-2])
             {
-                Debug.Log("上");
+
                 bom_A();
                 bombs[PlayerNumber-2]--;
-                Debug.Log(bombs[PlayerNumber - 2]);
             }
         }
         if (Physics.Raycast(ray_down,out hit, breblok, la))//破壊可能ブロックが下にあるときの処理
         {
             if (canDropBombs[PlayerNumber-2])
             {
-                Debug.Log("下");
+           
                 bom_A();
                 bombs[PlayerNumber - 2]--;
-                Debug.Log(bombs[PlayerNumber - 2]);
             }
         }
         if (Physics.Raycast(ray_right, out hit, breblok, la))//破壊可能ブロックが右にあるときの処理
         {
             if (canDropBombs[PlayerNumber - 2] )
             {
-                Debug.Log("右");
+            
                 bom_A();
                 bombs[PlayerNumber - 2]--;
-                Debug.Log(bombs[PlayerNumber - 2]);
             }
 
         }
@@ -157,10 +154,9 @@ public class Move_to : MonoBehaviour
         {
             if (canDropBombs[PlayerNumber - 2] )
             {
-                Debug.Log("左");
+          
                 bom_A();
                 bombs[PlayerNumber - 2]--;
-                Debug.Log(bombs[PlayerNumber - 2]);
             }
         }
 
@@ -174,7 +170,6 @@ public class Move_to : MonoBehaviour
             {
                 bom_A();
                 bombs[PlayerNumber - 2]--;
-                Debug.Log(bombs[PlayerNumber - 2]);
             }
         }
         if (Physics.Raycast(ray_down, out hit, disply, lay))//プレイヤーが下にいるとき
@@ -183,7 +178,6 @@ public class Move_to : MonoBehaviour
             {
                 bom_A();
                 bombs[PlayerNumber - 2]--;
-                Debug.Log(bombs[PlayerNumber - 2]);
             }
         }
         if (Physics.Raycast(ray_right, out hit, disply, lay))//プレイヤーが右にいるとき
@@ -192,7 +186,6 @@ public class Move_to : MonoBehaviour
             {
                 bom_A();
                 bombs[PlayerNumber - 2]--;
-                Debug.Log(bombs[PlayerNumber - 2]);
             }
 
         }
@@ -202,7 +195,6 @@ public class Move_to : MonoBehaviour
             {
                 bom_A();
                 bombs[PlayerNumber - 2]--;
-                Debug.Log(bombs[PlayerNumber - 2]);
             }
         }
         bombSetCnt = 0.0f;// カウント初期化
@@ -224,8 +216,10 @@ public class Move_to : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Balst"))
         {
+            if (dead)
+                DeadPlayer.PlayerDied(PlayerNumber);
             dead = true;
-            DeadPlayer.PlayerDied(PlayerNumber);
+           
             Destroy(gameObject);
         }
     }
