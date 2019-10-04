@@ -24,7 +24,7 @@ public class Move_to : MonoBehaviour
 
     [Range(2, 4)]
     public int PlayerNumber;
-    public bool dead = false;
+    static public bool[] dead = new bool[3];
     public DeadPlayer DeadPlayer;
     // Start is called before the first frame updat
     void Start()
@@ -37,7 +37,7 @@ public class Move_to : MonoBehaviour
         //ステータス
         bombs[0] = 2; bombs[1] = 2; bombs [2] = 2;
         canDropBombs[0] = true; canDropBombs[1] = true; canDropBombs[2] = true;
-
+        dead[0] = false; dead[1] = false; dead[2] = false;
 
     }
 
@@ -214,13 +214,34 @@ public class Move_to : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Balst"))
+        if (other.CompareTag("Balst"))
         {
-            if (dead)
-                DeadPlayer.PlayerDied(PlayerNumber);
-            dead = true;
-           
-            Destroy(gameObject);
+ 
+            if(PlayerNumber == 2)
+            {
+                if (dead[PlayerNumber -2])
+                    DeadPlayer.PlayerDied(PlayerNumber);
+                dead[PlayerNumber - 2] = true;
+                Destroy(gameObject);
+            }
+            else if (PlayerNumber == 3)
+            {
+                if (dead[PlayerNumber - 2])
+                    DeadPlayer.PlayerDied(PlayerNumber);
+                dead[PlayerNumber - 2] = true;
+                Destroy(gameObject);
+            }
+            else if (PlayerNumber == 4)
+            {
+                if (dead[PlayerNumber - 2])
+                {
+                    DeadPlayer.PlayerDied(PlayerNumber);
+                    Debug.Log(22);
+                } 
+                dead[PlayerNumber - 2] = true;
+                Destroy(gameObject);
+            }
+
         }
     }
 }

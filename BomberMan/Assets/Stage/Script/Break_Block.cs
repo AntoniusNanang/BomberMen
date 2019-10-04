@@ -6,6 +6,7 @@ public class Break_Block : MonoBehaviour
 {
     public GameObject[] item_pre = new GameObject[2];
     GameObject obj;
+    public GameObject child;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,7 +24,8 @@ public class Break_Block : MonoBehaviour
         if (other.CompareTag("Balst"))
         {
             gameObject.SetActive(false);
-            if(Random.Range(0,2) == 0)
+            child.SetActive(false);
+            if(Random.Range(0,2) == 0|| Random.Range(0, 2) == 1)
             {
                 Invoke("CreateItem", 0.8f);
             }
