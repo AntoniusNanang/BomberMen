@@ -9,6 +9,7 @@ public class Bomb : MonoBehaviour
     public int Pow = 3;
     public Player_2 bomb;
     public Move_to com_Bomb;
+    public Move_to02 com1_Bomb;
     public int bombs = 1;
     private bool exploded = false;
 

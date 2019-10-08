@@ -34,7 +34,7 @@ public class Player_2 : MonoBehaviour
         /*-------ステータス--------*/
         canDropBombs[0] = true; canDropBombs[1] = true; canDropBombs[2] = true; canDropBombs[3] = true;
         bombs[0] = 1; bombs[1] = 1; bombs[2] = 1; bombs[3] = 1;
-        maxBomb[0] = 1; maxBomb[1] = 1; maxBomb[2] = 1; maxBomb[3] = 2;
+        maxBomb[0] = 1; maxBomb[1] = 1; maxBomb[2] = 1; maxBomb[3] = 1;
         PlayerBombPow[0] = 3; PlayerBombPow[1] = 3; PlayerBombPow[2] = 3; PlayerBombPow[3] = 3;
     }
 
@@ -53,6 +53,7 @@ public class Player_2 : MonoBehaviour
             UpadatePlyer1Movement();
             BombCount();
         }
+        
     }
 
     private void UpadatePlyer1Movement()
@@ -88,9 +89,9 @@ public class Player_2 : MonoBehaviour
         if (canDropBombs[0] && Input.GetKeyDown(KeyCode.B))
         {
             bomb.Pow = PlayerBombPow[0];
+            Debug.Log(bombs[0]);
             DropBomb();
-            bombs[0]--;
-            
+            Debug.Log(bombs[0]);
         }
     }
 
@@ -106,32 +107,26 @@ public class Player_2 : MonoBehaviour
                 );
             Instantiate(bombPrefab, pos, bombPrefab.transform.rotation);
         }
+        bombs[0]--;
     }
 
     //爆弾が0だったら置けない
     void BombCount()
     {
-        for(int i = 0; i< bombs.Length; i++)
+
+        if (bombs[0] <= 0)
         {
-            if (bombs[i] <= 0)
-            {
-                canDropBombs[i] = false;
-            }
-            else
-                canDropBombs[i] = true;
+            canDropBombs[0] = false;
         }
+        else
+            canDropBombs[0] = true;
+        
     }
 
     public void BombNum(int bombNum)
     {
-        for(int i = 0; i < bombs.Length; i++)
-        {
-            for(int j = 0; j < maxBomb.Length; j++)
-            {
-                if (bombs[i] < maxBomb[i])  bombs[i] += bombNum;
-                if (bombs[i] >= maxBomb[i]) bombs[i] += 0;
-            }
-        }
+        if (bombs[0] == maxBomb[0]) bombs[0] += 0;
+        else bombs[0] += bombNum;    
     }
     //プレイヤの当たり判定の処理
     public void OnTriggerEnter(Collider other)
@@ -141,7 +136,8 @@ public class Player_2 : MonoBehaviour
         {
             dead = true;
             DeadPlayer.PlayerDied(PlayerNumber);
-            Destroy(gameObject);
+            gameObject.SetActive(false);
+            //Destroy(gameObject);
         }
         //アイテムに触れたとき
         if (other.CompareTag("Item"))

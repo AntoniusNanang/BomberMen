@@ -5,33 +5,32 @@ using UnityEngine.SceneManagement;
 
 public class DeadPlayer : MonoBehaviour
 {
-    private int deadPlayers = 1;
+    private int deadPlayers = 0;
     private int[] DeadPlayerNumber = new int[3];
     static public int[] score = new int[4];
     int i = 0;
     // Start is called before the first frame update
     void Start()
     {
+        deadPlayers = 0;
         DeadPlayerNumber[0] = -1; DeadPlayerNumber[1] = -1; DeadPlayerNumber[2] = -1;
     }
 
     public void PlayerDied(int playerNumber)
     {
         deadPlayers++;
+        if (deadPlayers == 1)
+        {
+            DeadPlayerNumber[0] = playerNumber;
+            Debug.Log(DeadPlayerNumber[0]);
 
-        //if (deadPlayers == 1)
-        //{
-        //    DeadPlayerNumber[0] = playerNumber;
-        //    Debug.Log(DeadPlayerNumber[0]);
-           
+        }
+        if (deadPlayers == 2)
+        {
+            DeadPlayerNumber[1] = playerNumber;
+            Debug.Log(DeadPlayerNumber[1]);
 
-        //}
-        //if (deadPlayers == 2)
-        //{
-        //    DeadPlayerNumber[1] = playerNumber;
-        //    Debug.Log(DeadPlayerNumber[1]);
-           
-        //}
+        }
         if (deadPlayers == 3)
         {
             DeadPlayerNumber[2] = playerNumber;

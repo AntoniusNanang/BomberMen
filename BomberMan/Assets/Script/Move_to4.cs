@@ -6,6 +6,8 @@ using UnityEngine.AI;
 public class Move_to4 : MonoBehaviour
 {
     public Move_to m;
+    public DeadPlayer Dead;
+    int PlayerNumber = 4;
     //public Animator animator;
     private Transform myTransform;
     public Transform[] points;
@@ -106,22 +108,30 @@ public class Move_to4 : MonoBehaviour
             {
               
                 tracking = true;
-                m.DropBomb();
-                Debug.Log(m.bombs[2]);
-
+                if (m.canDropBombs[2])
+                {
+                    m.DropBomb();
+                    //if (m.bombs[2] == 1) m.canDropBombs[2] = true;
+                }
             }
             else if( distance2 < trackingRange)
             {
                 
                 tracking = true;
-                m.DropBomb();
-                Debug.Log(m.bombs[2]);
+                if (m.canDropBombs[2])
+                {
+                    m.DropBomb();
+                    //if (m.bombs[2] == 1) m.canDropBombs[2] = true;
+                }
             }
             else if( distance3 < trackingRange)
             {
                 tracking = true;
-                m.DropBomb();
-                Debug.Log(m.bombs[2]);
+                if (m.canDropBombs[2])
+                {
+                    m.DropBomb();
+                    //if (m.bombs[2] == 1) m.canDropBombs[2] = true;
+                }
             }
 
             if (!agent.pathPending && agent.remainingDistance < 1f)
@@ -142,7 +152,9 @@ public class Move_to4 : MonoBehaviour
     {
         if (other.CompareTag("Balst"))
         {
-            m.des();
+            m.dead[2] = true;
+            Dead.PlayerDied(m.PlayerNumber);
+            gameObject.SetActive(false);
         }
     }
     void OnDrawGizmosSelected()

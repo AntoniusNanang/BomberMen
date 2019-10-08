@@ -154,8 +154,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 802b86d3c5560054babdc18c21f2ff4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosionPrefub: {fileID: 2405285152813422219, guid: 98cdb20634707824eb47f5285754ff16,
-    type: 3}
+  explosionPrefub: {fileID: 177540, guid: 69dfce71c987ee94ebd40421847e3c8e, type: 3}
   levelMask:
   - serializedVersion: 2
     m_Bits: 512
@@ -164,6 +163,7 @@ MonoBehaviour:
   Pow: 3
   bomb: {fileID: 4021274879241860939, guid: 54936273b6cfdc34b9cec39760646ee0, type: 3}
   com_Bomb: {fileID: 534511379, guid: d37f5669660b7b7429e80bf0dd724326, type: 3}
+  com1_Bomb: {fileID: 0}
   bombs: 1
 --- !u!135 &4344013239714204635
 SphereCollider:
