@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 8290502430265662320}
   - component: {fileID: 5384335802376669436}
   - component: {fileID: 2072688593236377589}
-  - component: {fileID: 7330526366944238773}
   m_Layer: 11
   m_Name: Collider
   m_TagString: Untagged
@@ -59,22 +58,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Pl: {fileID: 3675022564234285008, guid: 385ba0ee51a658940b1045b3c5763a4c, type: 3}
---- !u!208 &7330526366944238773
-NavMeshObstacle:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3904595162465101600}
-  m_Enabled: 0
-  serializedVersion: 3
-  m_Shape: 1
-  m_Extents: {x: 0.5, y: 0.5, z: 2.5}
-  m_MoveThreshold: 0.1
-  m_Carve: 1
-  m_CarveOnlyStationary: 1
-  m_Center: {x: 0, y: 0, z: 0}
-  m_TimeToStationary: 0.5
 --- !u!1 &4344013239714204632
 GameObject:
   m_ObjectHideFlags: 0
@@ -90,6 +73,8 @@ GameObject:
   - component: {fileID: 4344013239714204635}
   - component: {fileID: 3213264328255242020}
   - component: {fileID: 7051124452624102747}
+  - component: {fileID: 7105610305320000702}
+  - component: {fileID: 321294701341756690}
   m_Layer: 11
   m_Name: Boom
   m_TagString: Boom
@@ -105,7 +90,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4344013239714204632}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 1.0065686, y: 0.5166666, z: 13.433759}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8290502430265662320}
@@ -171,8 +156,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosionPrefub: {fileID: 2405285152813422219, guid: 98cdb20634707824eb47f5285754ff16,
     type: 3}
-  nullPrefub: {fileID: 1384607180117938968, guid: c1433ed12f7eb81479d23357bcd451b1,
-    type: 3}
   levelMask:
   - serializedVersion: 2
     m_Bits: 512
@@ -180,8 +163,7 @@ MonoBehaviour:
     m_Bits: 1024
   Pow: 3
   bomb: {fileID: 4021274879241860939, guid: 54936273b6cfdc34b9cec39760646ee0, type: 3}
-  com_Bomb: {fileID: 1929518773394555963, guid: 3f18b27243e6a124fa6fd8cdeb23c81b,
-    type: 3}
+  com_Bomb: {fileID: 534511379, guid: d37f5669660b7b7429e80bf0dd724326, type: 3}
   bombs: 1
 --- !u!135 &4344013239714204635
 SphereCollider:
@@ -228,3 +210,29 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
+--- !u!65 &7105610305320000702
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4344013239714204632}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Size: {x: 4, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!65 &321294701341756690
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4344013239714204632}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 4}
+  m_Center: {x: 0, y: 0, z: 0}
