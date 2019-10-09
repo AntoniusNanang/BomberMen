@@ -19,9 +19,9 @@ TagManager:
   - Boom_Plus
   - Boom_PowUp
   - Blast_x
-  - Rood
   - Item
   - Item_Bomb
+  - run
   layers:
   - Default
   - TransparentFX

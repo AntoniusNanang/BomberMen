@@ -23,10 +23,9 @@ public class Break_Block : MonoBehaviour
         if (other.CompareTag("Balst"))
         {
             gameObject.SetActive(false);
-            if(Random.Range(0,2) == 0)
-            {
-                Invoke("CreateItem", 0.8f);
-            }
+          
+            Invoke("CreateItem", 0.8f);
+            
 
         }
     }

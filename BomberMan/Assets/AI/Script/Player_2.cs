@@ -30,10 +30,11 @@ public class Player_2 : MonoBehaviour
         //transform.localPosition += new Vector3(0, 0.5f, 0);
         rigidBody = GetComponent<Rigidbody>();
         myTransform = transform;
+
         /*-------ステータス--------*/
         canDropBombs[0] = true; canDropBombs[1] = true; canDropBombs[2] = true; canDropBombs[3] = true;
-        bombs[0] = 2; bombs[1] = 2; bombs[2] = 2; bombs[3] = 2;
-        maxBomb[0] = 2; maxBomb[1] = 2; maxBomb[2] = 2; maxBomb[3] = 2;
+        bombs[0] = 1; bombs[1] = 1; bombs[2] = 1; bombs[3] = 1;
+        maxBomb[0] = 1; maxBomb[1] = 1; maxBomb[2] = 1; maxBomb[3] = 1;
         PlayerBombPow[0] = 3; PlayerBombPow[1] = 3; PlayerBombPow[2] = 3; PlayerBombPow[3] = 3;
     }
 
@@ -44,6 +45,7 @@ public class Player_2 : MonoBehaviour
     }
     private void UpdateMovement()
     {
+        //animator.SetBool("IsRun", false);
         if (!canMove)
             return;
         if (PlayerNumber == 1)
@@ -51,6 +53,7 @@ public class Player_2 : MonoBehaviour
             UpadatePlyer1Movement();
             BombCount();
         }
+        
     }
 
     private void UpadatePlyer1Movement()
@@ -60,31 +63,35 @@ public class Player_2 : MonoBehaviour
             transform.localPosition += Vector3.forward * moveSpeed * Time.deltaTime; 
             //rigidBody.velocity = new Vector3(rigidBody.velocity.x, rigidBody.velocity.y, moveSpeed);
             myTransform.rotation = Quaternion.Euler(0, 180, 0);
+            //animator.SetBool("IsRun", true);
         }
         if (Input.GetKey(KeyCode.A))
         {
             transform.localPosition += Vector3.left * moveSpeed * Time.deltaTime;
             //rigidBody.velocity = new Vector3(-moveSpeed, rigidBody.velocity.y, rigidBody.velocity.z);
             myTransform.rotation = Quaternion.Euler(0, 90, 0);
+            //animator.SetBool("IsRun", true);
         }
         if (Input.GetKey(KeyCode.S))
         {
             transform.localPosition += Vector3.back * moveSpeed * Time.deltaTime;
             //rigidBody.velocity = new Vector3(rigidBody.velocity.x, rigidBody.velocity.y, -moveSpeed);
             myTransform.rotation = Quaternion.Euler(0, 0, 0);
+            //animator.SetBool("IsRun", true);
         }
         if (Input.GetKey(KeyCode.D))
         {
             transform.localPosition += Vector3.right * moveSpeed * Time.deltaTime;
             //rigidBody.velocity = new Vector3(moveSpeed, rigidBody.velocity.y, rigidBody.velocity.z);
             myTransform.rotation = Quaternion.Euler(0, 270, 0);
+            //animator.SetBool("IsRun", true);
         }
         if (canDropBombs[0] && Input.GetKeyDown(KeyCode.B))
         {
             bomb.Pow = PlayerBombPow[0];
+            Debug.Log(bombs[0]);
             DropBomb();
-            bombs[0]--;
-            
+            Debug.Log(bombs[0]);
         }
     }
 
@@ -95,37 +102,31 @@ public class Player_2 : MonoBehaviour
             var pos = new Vector3
                 (
                     Mathf.RoundToInt(myTransform.position.x),
-                    bombPrefab.transform.position.y+1,
+                    bombPrefab.transform.position.y+0.5f,
                     Mathf.RoundToInt(myTransform.position.z)
                 );
             Instantiate(bombPrefab, pos, bombPrefab.transform.rotation);
         }
+        bombs[0]--;
     }
 
     //爆弾が0だったら置けない
     void BombCount()
     {
-        for(int i = 0; i< bombs.Length; i++)
+
+        if (bombs[0] <= 0)
         {
-            if (bombs[i] <= 0)
-            {
-                canDropBombs[i] = false;
-            }
-            else
-                canDropBombs[i] = true;
+            canDropBombs[0] = false;
         }
+        else
+            canDropBombs[0] = true;
+        
     }
 
     public void BombNum(int bombNum)
     {
-        for(int i = 0; i < bombs.Length; i++)
-        {
-            for(int j = 0; j < maxBomb.Length; j++)
-            {
-                if (bombs[i] < maxBomb[i])  bombs[i] += bombNum;
-                if (bombs[i] >= maxBomb[i]) bombs[i] += 0;
-            }
-        }
+        if (bombs[0] == maxBomb[0]) bombs[0] += 0;
+        else bombs[0] += bombNum;    
     }
     //プレイヤの当たり判定の処理
     public void OnTriggerEnter(Collider other)
@@ -135,7 +136,8 @@ public class Player_2 : MonoBehaviour
         {
             dead = true;
             DeadPlayer.PlayerDied(PlayerNumber);
-            Destroy(gameObject);
+            gameObject.SetActive(false);
+            //Destroy(gameObject);
         }
         //アイテムに触れたとき
         if (other.CompareTag("Item"))

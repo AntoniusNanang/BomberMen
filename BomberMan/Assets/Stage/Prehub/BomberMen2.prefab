@@ -11,10 +11,11 @@ GameObject:
   - component: {fileID: 2395984583482112516}
   - component: {fileID: 2395984584298868867}
   - component: {fileID: 2395984584298868866}
-  - component: {fileID: 2395984584298868869}
-  m_Layer: 0
+  - component: {fileID: 165427834}
+  - component: {fileID: 165427838}
+  m_Layer: 12
   m_Name: BomberMen2
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26,7 +27,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2395984583482205732}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 5.5990424, y: 5.1400785, z: -6.1833153}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -58,14 +59,14 @@ CapsuleCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2395984583482205732}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 024e68ea820f6a24589532293b7a94d0, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.5
   m_Height: 1.9211569
   m_Direction: 1
   m_Center: {x: 0, y: 0.9521346, z: 0}
---- !u!114 &2395984584298868869
+--- !u!114 &165427834
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -74,17 +75,50 @@ MonoBehaviour:
   m_GameObject: {fileID: 2395984583482205732}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 063a260443073bd499f747001e62fbc0, type: 3}
+  m_Script: {fileID: 11500000, guid: 056eec2f3a42bc04a8160060777714e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerNumber: 1
-  moveSpeed: 5
-  canDropBombs: 00000000
-  canMove: 1
-  bomb: {fileID: 2189331472804684845, guid: 2c24680a98c91ea44a50019124bcd349, type: 3}
-  PlayerBombPow: 00000000000000000000000000000000
+  ply: {fileID: 0}
+  p: {fileID: 0}
   bombPrefab: {fileID: 4344013239714204632, guid: 2c24680a98c91ea44a50019124bcd349,
     type: 3}
+  canDropBombs: 000000
+  bomb: {fileID: 2189331472804684845, guid: 2c24680a98c91ea44a50019124bcd349, type: 3}
+  LayerMask:
+    serializedVersion: 2
+    m_Bits: 2048
+  lay:
+    serializedVersion: 2
+    m_Bits: 4096
+  la:
+    serializedVersion: 2
+    m_Bits: 1024
+  PlayerNumber: 2
+  dead: 0
+  DeadPlayer: {fileID: 5083321912318399513, guid: ccba06ca30fded445957c822aafed642,
+    type: 3}
+--- !u!195 &165427838
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2395984583482205732}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 2
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1 &2395984583482205734
 GameObject:
   m_ObjectHideFlags: 0
@@ -96,7 +130,7 @@ GameObject:
   - component: {fileID: 2395984583482112518}
   - component: {fileID: 2395984583485504036}
   - component: {fileID: 2395984583484405988}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: default
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -172,7 +206,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2395984583743546408}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -202,7 +236,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2395984584380513309}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}

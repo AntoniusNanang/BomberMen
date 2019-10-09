@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 3675022564234285008}
   m_Layer: 0
   m_Name: BomberMen1
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -111,10 +111,12 @@ MonoBehaviour:
   moveSpeed: 5
   canDropBombs: 00000000
   canMove: 1
-  bomb: {fileID: 2189331472804684845, guid: 2c24680a98c91ea44a50019124bcd349, type: 3}
+  bomb: {fileID: 8026862866403467894, guid: 6291891f72f724c4eae6be6052e78735, type: 3}
   PlayerBombPow: 00000000000000000000000000000000
   bombPrefab: {fileID: 4344013239714204632, guid: 2c24680a98c91ea44a50019124bcd349,
     type: 3}
+  dead: 0
+  DeadPlayer: {fileID: 0}
 --- !u!1 &3675022564474493299
 GameObject:
   m_ObjectHideFlags: 0
@@ -126,6 +128,7 @@ GameObject:
   - component: {fileID: 3675022564474455379}
   - component: {fileID: 3675022564477879665}
   - component: {fileID: 3675022564476749745}
+  - component: {fileID: 2019988518105791412}
   m_Layer: 0
   m_Name: default
   m_TagString: Untagged
@@ -193,6 +196,25 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!95 &2019988518105791412
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3675022564474493299}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: 9a2f5132f168ed0459dd0a7d6dee893e, type: 3}
+  m_Controller: {fileID: 9100000, guid: ef2b6adf67391664ea845ab2d728a107, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &3675022564751596412
 GameObject:
   m_ObjectHideFlags: 0
