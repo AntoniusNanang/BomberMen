@@ -55,7 +55,7 @@ public class Move_to3 : MonoBehaviour
         agent.destination = points[destPoint].position;
 
         //配列内の次の位置をランダムで取得し目標地点に設定
-        destPoint = (Random.Range(0, 91) % points.Length);
+        //destPoint = (Random.Range(0, 91) % points.Length);
 
         //animator.SetBool("Walking", true); 
     }

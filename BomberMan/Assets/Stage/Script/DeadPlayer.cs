@@ -79,7 +79,7 @@ public class DeadPlayer : MonoBehaviour
     {
         if (score[0] > 2 || score[1] > 2 || score[2] > 2 || score[3] > 2)
         {
-            SceneManager.LoadScene("ResultScene");
+            SceneManager.LoadScene("TitleScene");
         }
         else SceneManager.LoadScene("Game");
     }

@@ -16,6 +16,7 @@ public class Bomb : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        bomb.canDropBombs = new bool[4];
         Invoke("Explode", 3f);
     }
 
@@ -43,6 +44,11 @@ public class Bomb : MonoBehaviour
         bomb.BombNum(bombs);
         com_Bomb.BombNu(bombs);
        
+    }
+
+    void WhoBomb()
+    {
+        
     }
 
     private IEnumerator CreateExplosion(Vector3 direction)

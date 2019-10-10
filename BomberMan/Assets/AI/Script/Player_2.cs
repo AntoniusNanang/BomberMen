@@ -89,9 +89,7 @@ public class Player_2 : MonoBehaviour
         if (canDropBombs[0] && Input.GetKeyDown(KeyCode.B))
         {
             bomb.Pow = PlayerBombPow[0];
-            Debug.Log(bombs[0]);
             DropBomb();
-            Debug.Log(bombs[0]);
         }
     }
 

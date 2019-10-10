@@ -22,6 +22,7 @@ TagManager:
   - Item
   - Item_Bomb
   - run
+  - Explosion
   layers:
   - Default
   - TransparentFX
@@ -36,7 +37,7 @@ TagManager:
   - Break
   - bom
   - player
-  - 
+  - enemy
   - 
   - 
   - 
