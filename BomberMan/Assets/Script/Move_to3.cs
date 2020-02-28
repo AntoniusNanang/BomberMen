@@ -6,6 +6,7 @@ using UnityEngine.AI;
 public class Move_to3 : MonoBehaviour
 {
     public Move_to m;
+    public DeadPlayer Dead;
     //public Animator animator;
     private Transform myTransform;
     public Transform[] points;
@@ -54,7 +55,7 @@ public class Move_to3 : MonoBehaviour
         agent.destination = points[destPoint].position;
 
         //配列内の次の位置をランダムで取得し目標地点に設定
-        destPoint = (Random.Range(0, 91) % points.Length);
+        //destPoint = (Random.Range(0, 91) % points.Length);
 
         //animator.SetBool("Walking", true); 
     }
@@ -96,7 +97,11 @@ public class Move_to3 : MonoBehaviour
             if (distance < trackingRange || distance2 < trackingRange || distance4 < trackingRange)
             {
                 tracking = true;
-                m.DropBomb();
+                if (m.canDropBombs[1])
+                {
+                    m.DropBomb();
+                    //if (m.bombs[1] == 1) m.canDropBombs[1] = true;
+                }
 
             }
 
@@ -114,7 +119,9 @@ public class Move_to3 : MonoBehaviour
     {
         if (other.CompareTag("Balst"))
         {
-            m.des();
+            m.dead[1] = true;
+            Dead.PlayerDied(m.PlayerNumber);
+            gameObject.SetActive(false);
         }
     }
 }

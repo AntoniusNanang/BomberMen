@@ -8,7 +8,7 @@ public class Move_to : MonoBehaviour
     
     //public Player_2 p;
     public GameObject bombPrefab;
-    public int[] bombs = new int [3];
+    static public int[] bombs = new int [3];
     public bool[] canDropBombs = new bool [3];
     public Bomb bomb;
     int a;//bombの値を格納
@@ -21,8 +21,8 @@ public class Move_to : MonoBehaviour
     float bombSetCnt = 0.0f;
     [Range(2, 4)]
     public int PlayerNumber;
-    static public bool[] dead = new bool[3];
-    public DeadPlayer DeadPlayer;
+    public bool[] dead = new bool[3];
+    //public DeadPlayer DeadPlayer;
 
     // Start is called before the first frame updat
     void Start()
@@ -36,7 +36,6 @@ public class Move_to : MonoBehaviour
             Debug.Log(transform.position);
         }
         a = bomb.Pow;
-       
         //p = p_0.GetComponent<Player_2>();
         //animator = myTransform.Find("PlayerModel").GetComponent<Animator>();
 
@@ -60,7 +59,7 @@ public class Move_to : MonoBehaviour
 
 
    
-    void BombCount()
+    public void BombCount()
     {
         for(int i = 0; i < canDropBombs.Length; i++)
         {
@@ -242,35 +241,35 @@ public class Move_to : MonoBehaviour
     //    }
     //    else b = 1;
     //}
-    public void des()
-    {
-        if (PlayerNumber == 2)
-        {
+    //public void des()
+    //{
+    //    if (PlayerNumber == 2)
+    //    {
 
-            if (dead[PlayerNumber - 2])
-            {
-                DeadPlayer.PlayerDied(PlayerNumber);
-            } 
-            dead[PlayerNumber - 2] = true;
-            gameObject.SetActive(false);
-        }
-        else if (PlayerNumber == 3)
-        {
-            if (dead[PlayerNumber - 2])
-                DeadPlayer.PlayerDied(PlayerNumber);
-            dead[PlayerNumber - 2] = true;
-            gameObject.SetActive(false);
-        }
-        else if (PlayerNumber == 4)
-        {
-            if (dead[PlayerNumber - 2])
-            {
-                DeadPlayer.PlayerDied(PlayerNumber);
-            }
-            dead[PlayerNumber - 2] = true;
-            gameObject.SetActive(false);
-        }
-    }
+    //        if (dead[PlayerNumber - 2])
+    //        {
+    //            DeadPlayer.PlayerDied(PlayerNumber);
+    //        } 
+    //        dead[PlayerNumber - 2] = true;
+    //        gameObject.SetActive(false);
+    //    }
+    //    else if (PlayerNumber == 3)
+    //    {
+    //        if (dead[PlayerNumber - 2])
+    //            DeadPlayer.PlayerDied(PlayerNumber);
+    //        dead[PlayerNumber - 2] = true;
+    //        gameObject.SetActive(false);
+    //    }
+    //    else if (PlayerNumber == 4)
+    //    {
+    //        if (dead[PlayerNumber - 2])
+    //        {
+    //            DeadPlayer.PlayerDied(PlayerNumber);
+    //        }
+    //        dead[PlayerNumber - 2] = true;
+    //        gameObject.SetActive(false);
+    //    }
+    //}
 
    
 }

@@ -9,12 +9,14 @@ public class Bomb : MonoBehaviour
     public int Pow = 3;
     public Player_2 bomb;
     public Move_to com_Bomb;
+    public Move_to02 com1_Bomb;
     public int bombs = 1;
     private bool exploded = false;
 
     // Start is called before the first frame update
     void Start()
     {
+        bomb.canDropBombs = new bool[4];
         Invoke("Explode", 3f);
     }
 
@@ -42,6 +44,11 @@ public class Bomb : MonoBehaviour
         bomb.BombNum(bombs);
         com_Bomb.BombNu(bombs);
        
+    }
+
+    void WhoBomb()
+    {
+        
     }
 
     private IEnumerator CreateExplosion(Vector3 direction)

@@ -6,6 +6,7 @@ using UnityEngine.AI;
 public class Move_to02 : MonoBehaviour
 {
     public Move_to m;
+    public DeadPlayer Dead;
     //public Animator animator;
     private Transform myTransform;
     public Transform[] points;
@@ -134,7 +135,11 @@ public class Move_to02 : MonoBehaviour
             if (distance < trackingRange || distance3 < trackingRange || distance4 < trackingRange)
             {
                 tracking = true;
-                m.DropBomb();
+                if (m.canDropBombs[0])
+                {
+                    m.DropBomb();
+                    //if (m.bombs[0] == 1) m.canDropBombs[0] = true;
+                }
             }
                 
             if (!agent.pathPending && agent.remainingDistance < 1f)
@@ -144,11 +149,14 @@ public class Move_to02 : MonoBehaviour
                
         }
     }
+
     public void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Balst"))
         {
-            m.des();
+            m.dead[1] = true;
+            Dead.PlayerDied(m.PlayerNumber);
+            gameObject.SetActive(false);
         }
     }
     void OnDrawGizmosSelected()
