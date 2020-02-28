@@ -46,7 +46,7 @@ public class Move_to02 : MonoBehaviour
             return;
 
         //現在設定されている目標地点に行くように設置
-        agent.destination = points[destPoint].position;
+       // agent.destination = points[destPoint].position;
 
         //配列内の次の位置をランダムで取得し目標地点に設定
         destPoint = (Random.Range(0, 91) % points.Length);

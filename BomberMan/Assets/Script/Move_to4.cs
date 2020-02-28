@@ -95,7 +95,7 @@ public class Move_to4 : MonoBehaviour
             tracking = false;
 
             //Playerを目標とする  
-
+            agent.destination = player3Pos;
 
 
         }

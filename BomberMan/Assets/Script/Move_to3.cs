@@ -86,9 +86,9 @@ public class Move_to3 : MonoBehaviour
             }
 
             //Playerを目標とする  
-            agent.destination = playerPos;
+            //agent.destination = playerPos;
             agent.destination = player2Pos;
-            agent.destination = player4Pos;
+            //agent.destination = player4Pos;
         }
         else
         {
